@@ -1,0 +1,5 @@
+pre-push:
+  parallel: false
+  commands:
+    branch-protection:
+      run: sh scripts/branch-protection.sh

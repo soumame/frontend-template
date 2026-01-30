@@ -7,16 +7,49 @@ create-tsrouter-app@latest
 
 - TypeScript
 - React
+- Vite
 
-- Tailwind CSS
-- Lucide
+- スタイリング
+  - Tailwind CSS
+  - Lucide
 
-- Tanstack Router
-- Tanstack Query
-- Zod
+- データローディング戦略
+  - Tanstack Router
+  - Tanstack Query
+  - Zod
 
-- Biome
-- Vitest
+- コード品質
+  - Biome
+  - Vitest
+  - Renovate
+  - LeftHook
+
+## Git戦略
+規模や、作るものによって変わるけど、デフォルトでは以下のような戦略を取る。
+個人で作る場合や、プロトタイプのプロトタイプレベルであれば、ブランチ保護は不要かもしれない。その場合はlefthookを無効化すればOKです
+- ブランチ保護
+  - 新しいブランチを作成してPRを作成する
+    - mainブランチに直接プッシュは禁止
+      - デフォルトでは、`lefthook`を利用してブランチ保護を行っている。
+      - *可能であれば、*GitHub側のブランチ保護(Rules)を利用する。
+  - ブランチ名
+    - *可能であれば、GitHub側のブランチ保護(Rules)を利用すると、より厳格にブランチ名を管理できる。
+    - `feature/` 新機能の開発
+    - `fix/` バグの修正
+    - `hotfix/` 緊急の修正(基本的にmain直コミット)
+    - `refactor/` リファクタリング
+    - `chore/` 細かい修正
+    - `docs/` ドキュメントの修正
+    - `style/` スタイルの修正
+
+## MCP
+
+MCPを利用する場合は、`.cursor/mcp.json`を参照してください。
+context7を利用する場合は、`.env`にCONTEXT7_API_KEYを設定してください。
+
+```bash
+CONTEXT7_API_KEY=your_context7_api_key
+```
 
 ---
 
